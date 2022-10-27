@@ -1,3 +1,4 @@
+const saveBtn = document.getElementById("save");
 const textInput = document.getElementById("text");
 const fileInput = document.getElementById("file");
 const destroyBtn = document.getElementById("destroy-btn");
@@ -94,9 +95,18 @@ function onDoubleClick(event) {
   ctx.save(); //saves all the current states
   const text = textInput.value;
   ctx.lineWidth = 1;
-  ctx.font = "48px serif";
+  ctx.font = "bold 48px serif";
   ctx.fillText(text, event.offsetX, event.offsetY);
   ctx.restore(); // what ever changes there is between save and restore, nothing is going to be saved
+}
+
+function onSaveClick() {
+  const url = canvas.toDataURL();
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "myDrawing.png";
+  console.log(a);
+  a.click();
 }
 
 canvas.addEventListener("dblclick", onDoubleClick);
@@ -114,3 +124,4 @@ modeBtn.addEventListener("click", onModeClick);
 destroyBtn.addEventListener("click", onDestroyClick);
 eraserBtn.addEventListener("click", onEraserClick);
 fileInput.addEventListener("change", onFileChange);
+save.addEventListener("click", onSaveClick);
