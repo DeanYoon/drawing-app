@@ -4,76 +4,161 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meme maker</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="color-options">
-      <input type="color" id="color" />
-      <div
-        class="color-option"
-        style="background-color: #1abc9c"
-        data-color="#1abc9c"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #2ecc71"
-        data-color="#2ecc71"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #3498db"
-        data-color="#3498db"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #9b59b6"
-        data-color="#9b59b6"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #34495e"
-        data-color="#34495e"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #f1c40f"
-        data-color="#f1c40f"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #e67e22"
-        data-color="#e67e22"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #e74c3c"
-        data-color="#e74c3c"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #ecf0f1"
-        data-color="#ecf0f1"
-      ></div>
-      <div
-        class="color-option"
-        style="background-color: #95a5a6"
-        data-color="#95a5a6"
-      ></div>
+    <div class="drawing-app">
+      <header>
+        <div>
+          <img src="./img/icon__1___1_-removebg-preview.png" alt="" />
+          <span>untitled - Paint</span>
+        </div>
+        <div id="window-buttons">
+          <div>ￚ</div>
+          <div>□</div>
+          <div>x</div>
+        </div>
+      </header>
+      <div class="navigator">
+        <span>File</span>
+        <span>Edit</span>
+        <span>View</span>
+        <span>Image</span>
+        <span>Options</span>
+        <span>Help</span>
+      </div>
+      <div class="main">
+        <div class="drawing-buttons">
+          <div class="button pen"><i class="fas fa-pen"></i></div>
+          <div class="button paint"><i class="fas fa-fill-drip"></i></div>
+          <div class="button eraser"><i class="fas fa-eraser"></i></div>
+          <div class="button trash"><i class="fas fa-trash-alt"></i></div>
+          <div class="button stamp"><i class="fas fa-stamp"></i></div>
+          <input type="text" class="stamp-text" />
+          <label for="file">
+            <div class="button upload"><i class="fas fa-file-image"></i></div>
+            <input type="file" accept="image/*" id="file" />
+          </label>
+          <div class="button download"><i class="fas fa-download"></i></div>
+        </div>
+        <canvas></canvas>
+      </div>
+      <div id="color-options">
+        <label for="color">
+          <div
+            class="color-option select-color"
+            style="background-color: #1abc9c"
+            data-color="#1abc9c"
+          ></div>
+          <input type="color" id="color" />
+        </label>
+        <div
+          class="color-option"
+          style="background-color: #1abc9c"
+          data-color="#1abc9c"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #2ecc71"
+          data-color="#2ecc71"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #3498db"
+          data-color="#3498db"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #9b59b6"
+          data-color="#9b59b6"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #34495e"
+          data-color="#34495e"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #f1c40f"
+          data-color="#f1c40f"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #e67e22"
+          data-color="#e67e22"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #e74c3c"
+          data-color="#e74c3c"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #ecf0f1"
+          data-color="#ecf0f1"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #95a5a6"
+          data-color="#95a5a6"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #1abc9c"
+          data-color="#1abc9c"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #2ecc71"
+          data-color="#2ecc71"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #3498db"
+          data-color="#3498db"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #9b59b6"
+          data-color="#9b59b6"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #34495e"
+          data-color="#34495e"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #f1c40f"
+          data-color="#f1c40f"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #e67e22"
+          data-color="#e67e22"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #e74c3c"
+          data-color="#e74c3c"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #ecf0f1"
+          data-color="#ecf0f1"
+        ></div>
+        <div
+          class="color-option"
+          style="background-color: #95a5a6"
+          data-color="#95a5a6"
+        ></div>
+      </div>
     </div>
-    <canvas></canvas>
-    <div class="btns">
-      <input type="range" id="line-width" min="0.01" max="10" step="0.01" />
-      <button id="mode-btn">Fill</button>
-      <button id="destroy-btn">Destroy</button>
-      <button id="eraser-btn">Erase</button>
-      <label for="file">
-        Add Photo
-        <input type="file" accept="image/*" id="file" />
-      </label>
-      <input type="text" placeholder="Write and then double click" id="text" />
-      <button id="save">Save Button</button>
-    </div>
-    <script src="./app.js"></script>
   </body>
+  <script src="./app.js"></script>
+  <script
+    src="https://kit.fontawesome.com/97289910c5.js"
+    crossorigin="anonymous"
+  ></script>
 </html>
