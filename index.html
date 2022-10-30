@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Window 98 Paint</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -15,9 +15,9 @@
           <span>untitled - Paint</span>
         </div>
         <div id="window-buttons">
-          <div>ￚ</div>
-          <div>□</div>
-          <div>x</div>
+          <div><span>__</span></div>
+          <div><span>□</span></div>
+          <div><span>x</span></div>
         </div>
       </header>
       <div class="navigator">
@@ -41,6 +41,10 @@
             <input type="file" accept="image/*" id="file" />
           </label>
           <div class="button download"><i class="fas fa-download"></i></div>
+          <div class="button-nav">
+            <span class="size-pen"></span>
+            <span class="size-word hidden">A</span>
+          </div>
         </div>
         <canvas></canvas>
       </div>
@@ -48,7 +52,7 @@
         <label for="color">
           <div
             class="color-option select-color"
-            style="background-color: #1abc9c"
+            style="background: linear-gradient(30deg, red, yellow, blue)"
             data-color="#1abc9c"
           ></div>
           <input type="color" id="color" />
@@ -153,6 +157,9 @@
           style="background-color: #95a5a6"
           data-color="#95a5a6"
         ></div>
+      </div>
+      <div class="help">
+        To change the size of line width and font, scroll it
       </div>
     </div>
   </body>
