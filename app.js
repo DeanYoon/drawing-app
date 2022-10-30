@@ -16,7 +16,7 @@ const uploadBtn = document.querySelector("#file");
 const downloadBtn = document.querySelector(".download");
 
 const canvas = document.querySelector("canvas");
-const mouseCursor = document.querySelector(".cursor");
+
 const ctx = canvas.getContext("2d");
 
 const CANVAS_WIDTH = 400;
