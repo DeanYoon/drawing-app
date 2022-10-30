@@ -16,6 +16,7 @@ const uploadBtn = document.querySelector("#file");
 const downloadBtn = document.querySelector(".download");
 
 const canvas = document.querySelector("canvas");
+const mouseCursor = document.querySelector(".cursor");
 const ctx = canvas.getContext("2d");
 
 const CANVAS_WIDTH = 400;
@@ -58,11 +59,11 @@ function stopDrawing() {
 
 function onMove(event) {
   if (isPainting) {
-    ctx.lineTo(event.offsetX, event.offsetY);
+    ctx.lineTo(event.offsetX + 1, event.offsetY + 7);
     ctx.stroke();
     return;
   }
-  ctx.moveTo(event.offsetX, event.offsetY);
+  ctx.moveTo(event.offsetX + 1, event.offsetY + 7);
 }
 function lineSize(event) {
   if (isStamp) {
@@ -86,7 +87,8 @@ function stampCanvas(event) {
     const stamp = textInput.value;
     ctx.lineWidth = 1;
     ctx.font = `${font}px serif`;
-    ctx.fillText(stamp, event.offsetX, event.offsetY);
+    //커서 이미지에 맞추기 위해 픽셀 추가
+    ctx.fillText(stamp, event.offsetX, event.offsetY + 20);
     ctx.restore();
   }
 }
@@ -99,6 +101,7 @@ function onPenBtnClick() {
   isPainting = true;
   sizePen.classList.remove(HIDE_CLASS);
   sizeWord.classList.add(HIDE_CLASS);
+  canvas.style.cursor = "url('./img/pencil.png'), auto";
 }
 function onPaintClick() {
   reset();
@@ -106,6 +109,7 @@ function onPaintClick() {
   ctx.strokeStyle = nowColor;
   paintBtn.classList.add(CLICKED);
   isFilling = true;
+  canvas.style.cursor = "url('./img/paint.png'), auto";
 }
 function onEraserBtnClick() {
   reset();
@@ -113,6 +117,7 @@ function onEraserBtnClick() {
   eraserBtn.classList.add(CLICKED);
   isPainting = true;
   ctx.strokeStyle = "white";
+  canvas.style.cursor = "url('./img/eraser.png'), auto";
 }
 function onTrashBtnClick() {
   unBtnAll();
@@ -130,6 +135,7 @@ function onStampBtnClick() {
   isStamp = true;
   sizePen.classList.add(HIDE_CLASS);
   sizeWord.classList.remove(HIDE_CLASS);
+  canvas.style.cursor = "url('./img/stampText.png'), auto";
 }
 
 function onUploadChanged(event) {
@@ -165,6 +171,7 @@ function onColorChange(event) {
   const selectColor = event.target.value;
   ctx.strokeStyle = selectColor;
   ctx.fillStyle = selectColor;
+  nowColor = selectColor;
   colorForSelect.style.background = selectColor;
 }
 function getSize() {
@@ -175,6 +182,8 @@ function getSize() {
   sizeWord.style.fontSize = `${font}px`;
   sizeWord.style.color = nowColor;
 }
+
+canvas.style.cursor = "url('./img/pencil.png'), auto";
 
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", stopDrawing);
@@ -197,5 +206,3 @@ color.addEventListener("change", onColorChange);
 
 getSize();
 setInterval(getSize, 10);
-
-console.log(navBtns);

@@ -83,6 +83,7 @@ header {
   align-items: center;
   justify-content: center;
   box-shadow: inset 1px 1px black, inset -1px -1px 10px white;
+  cursor: pointer;
 }
 
 img {
@@ -166,7 +167,11 @@ canvas {
   background-color: white;
   margin-bottom: 50px;
 }
-
+.cursor {
+  width: 5px;
+  height: 5px;
+  border: 1px solid black;
+}
 .main {
   display: flex;
 }
@@ -201,4 +206,7 @@ canvas {
   margin-bottom: 3px;
   margin-top: 3px;
   text-align: start;
+}
+
+.cursor-pen {
 }
